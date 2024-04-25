@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+  app:
+    build: .
+    image: s218325308/task5.1p-app:1.1.2
+    ports:
+      - "3043:3040"
+    environment:
+      - PORT=3043
+    container_name: 6.1-my-app
+    networks:
+      - my-net
+
+  app1:
+    build: .
+    image: s218325308/task5.1p-app:1.1.2
+    ports:
+      - "3044:3040"
+    environment:
+      - PORT=3044
+    container_name: 6.1-my-app1
+    networks:
+      - my-net
+
+networks:
+  my-net:
+    driver: bridge
